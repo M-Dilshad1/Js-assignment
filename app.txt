@@ -1,0 +1,54 @@
+                         What is stateles:
+
+A stateless or RESTful API refers to a type of API that follows the principles of REST (Representational State Transfer). RESTful APIs are designed to work over HTTP and are used to allow communication between different software systems, such as a client (browser) and a server.
+                    -resource
+                        Why Use Stateless/RESTful APIs?
+
+Scalability: Since the server doesn’t store session data, it can handle many requests independently, making it easier to scale.
+Simplicity: It uses simple HTTP methods and can work with any programming language (not just JavaScript).
+Interoperability: RESTful APIs can be accessed by different types of applications (web, mobile, desktop, etc.).
+Caching: Since requests are stateless, responses can easily be cached, improving performance.
+
+                             Example:
+
+  fetch(('https://jsonplaceholder.typicode.com/todos/1'), {
+  method: 'GET',
+  headers: {
+    'Authorization': 'Bearer your_jwt_token'
+  }
+})
+.then(response => response.json())
+.then(data => console.log(data))
+.catch(error => console.error('Error:', error));
+
+                                Real world Example:
+
+                                Cloud Storage Services
+
+fetch(fetch('https://jsonplaceholder.typicode.com/todos/1', {
+  method: 'POST',
+  headers: {
+    'Authorization': 'Bearer your_access_token',
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    path: ''
+  })
+})
+.then(response => response.json())
+.then(data => console.log(data.entries))
+.catch(error => console.error('Error:', error));
+, {
+  method: 'POST',
+  headers: {
+    'Authorization': 'Bearer your_access_token',
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    path: ''
+  })
+})
+.then(response => response.json())
+.then(data => console.log(data.entries))
+.catch(error => console.error('Error:', error));
+
